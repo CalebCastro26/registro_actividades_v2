@@ -1,0 +1,104 @@
+.index-content{
+    height: 80vw;
+}
+
+.index-content-title{
+    font-size: 25px;
+}
+
+.dialog-form {
+    width: 32vw;
+}
+
+.dialog-content-title{
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.dialog-content-combobox{
+    width: 100%;
+    margin: 5px 0;
+}
+
+.form-ticket-actividades {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.form-ticket-actividades-child-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-ticket-actividades-child-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-ticket-actividades-textArea {
+    width: 20vw;
+}
+
+.form-ticket-actividades-step-input {
+    margin-top: 50%;
+}
+
+@media screen and (max-width: 1110px) {
+    .index-content{
+        height: 90vw;
+    }
+
+    .index-content-title{
+        font-size: 20px;
+    }
+
+    .dialog-form {
+        width: 50vw;
+    }
+
+    .form-ticket-actividades-textArea {
+        width: 25vw;
+    }
+
+    .form-ticket-actividades {
+        margin: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .index-content{
+        height: 200vw;
+    }
+
+    .index-content-title{
+        font-size: 15px;
+    }
+
+    .form-ticket-actividades {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .form-ticket-actividades-child-1 {
+        margin: 10px;
+    }
+
+    .form-ticket-actividades-child-2 {
+        margin: 10px;
+    }
+
+    .form-ticket-actividades-textArea {
+        margin-top: 5%;
+        width: 265px;
+    }
+
+    .form-ticket-actividades-step-input {
+        margin-top: 5%;
+        width: 150px !important; 
+    }
+}
+
