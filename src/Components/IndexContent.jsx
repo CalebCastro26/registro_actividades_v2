@@ -5,13 +5,12 @@ import { getDate, funcAgrupamientoActividades } from "../utilities/utilities"
 import '../App.css'
 import DialogRegistrar from "./DialogRegistrar"
 import DialogEditar from "./DialogEditar"
-import { data } from "../../data"
 
 
 export default function IndexContent() {
 
     const appctx = useContext(ApplicationContext)
-    const [listadoActividades, setListadoActividades] = useState(data)
+    const [listadoActividades, setListadoActividades] = useState([])
     const [actividad, setActividad] = useState({})
 
     useEffect(() => {
@@ -27,7 +26,7 @@ export default function IndexContent() {
             .then((response) => response.json())
             .then((result) => {
                 console.log(result);
-                //setListadoActividades(result);
+                setListadoActividades(result);
                 
             })
             .catch((error) => console.log("error", error));

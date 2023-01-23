@@ -16,8 +16,6 @@ export default function DialogEditar({estado, actividad}) {
         appctx.setDataContext({ dialogEditar: false })
     }
 
-    //console.log(actividad)
-
     return (
         <Dialog style={{ width: "40vw" }}
             headerText={actividad.fecha}
@@ -31,7 +29,7 @@ export default function DialogEditar({estado, actividad}) {
 
             <List>
                 {actividad.actividad?.map(detail => (
-                    <StandardListItem additionalText={detail.horas}><Text>{detail.actividadDetalle}</Text></StandardListItem>
+                    <StandardListItem  additionalText={detail.horas}><Text>{detail.actividadDetalle}</Text></StandardListItem>
                 ))}
             </List>
         </Dialog>
