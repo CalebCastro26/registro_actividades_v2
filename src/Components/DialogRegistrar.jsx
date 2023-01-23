@@ -1,17 +1,16 @@
 import { Bar, Button, Dialog, Title, TextArea, StepInput, ComboBox, ComboBoxItem, Label, BusyIndicator, } from "@ui5/webcomponents-react";
 import { getDate } from "../utilities/utilities";
-import { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ApplicationContext } from "../context/ApplicationContext";
+import "@ui5/webcomponents/dist/features/InputElementsFormSupport.js";
 import '../App.css'
 
 export default function DialogRegistrar({ estado }) {
 
     const [dataTicket, setDataTicket] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    const [body, setBody] = useState({})
     const appctx = useContext(ApplicationContext)
-    const inputText = useRef()
-    const inputCantHours = useRef()
-    const inputTicket = useRef()
 
     document.onkeydown = function (evt) {
         evt = evt || window.event;
@@ -32,7 +31,7 @@ export default function DialogRegistrar({ estado }) {
         )
             .then((response) => response.json())
             .then((result) => {
-                console.log(result);
+                // console.log(result);
                 setDataTicket(result)
                 setIsLoading(false)
 
@@ -40,11 +39,45 @@ export default function DialogRegistrar({ estado }) {
             .catch((error) => console.log("error", error));
     }, [])
 
-    function registrarActividad(){
-        let detalleActividad = inputText.current.value
-        let cantidadHoras = inputCantHours.current.value
+    function registrarActividad() {
+        setIsLoading(true)
+        fetch(
+            "https://chain-services-ti-s-a-c--csti-s-a-c--ipoc-sandbox-ck3wg10b38b49.cfapps.eu10.hana.ondemand.com/api-ipoc/api/actividad/save-information-multiple", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Basic YW50aG9ueXJhbW9zZGV2QGdtYWlsLmNvbTpMaW1hMjAyMiQ="
+            },
+            body: JSON.stringify([body])
+        }
+        )
+            .then((response) => response.json())
+            .then((result) => {
+                console.log(result);
+                setIsLoading(false)
 
-        console.log(detalleActividad, cantidadHoras)
+            })
+            .catch((error) => console.log("error", error));
+    }
+
+    function handleInputChange(e){
+        setBody({
+            ...body,
+            [e.target.name] : e.target.value
+        })
+    }
+
+    function handleChange(e) {
+        let findTicket = dataTicket.find(ticket => ticket.requerimientoCodigo == e.target.value)
+        setBody({
+            ...body,
+            fecha: new Date(),
+            clienteCodigoErp: findTicket.cliente.clienteCodigoErp,
+            coordinadorErp: findTicket.coordinador.coordinadorErp,
+            requerimientoCodigo: findTicket.requerimientoCodigo,
+            aprobacionCliente: "",
+            aprobacionPlanificacion: "",
+        })
     }
 
     function closeDialogRegistrar() {
@@ -62,25 +95,29 @@ export default function DialogRegistrar({ estado }) {
             } />}
             open={estado}>
 
-            {isLoading ? (<div style={{display: 'flex', justifyContent: 'center'}}><BusyIndicator active/></div>) : (<div className="dialog-content">
+            {isLoading ? (<div style={{ display: 'flex', justifyContent: 'center' }}><BusyIndicator active /></div>) : (<div className="dialog-content">
                 <Title className="dialog-content-title">Fecha: {getDate()}</Title>
-                <Label>Cliente / Ticket:</Label>
-                <ComboBox className="dialog-content-combobox">
+                <Label>Ticket:</Label>
+                <ComboBox className="dialog-content-combobox" onChange={handleChange} >
                     {dataTicket.map(ticket => (
-                        <ComboBoxItem key={ticket.id} text={ticket.requerimientoCodigo} additionalText={ticket.cliente.clienteNombre} />
+                        <ComboBoxItem
+                            key={ticket.id}
+                            text={ticket.requerimientoCodigo}
+                            additionalText={ticket.cliente.clienteNombre} />
                     ))}
                 </ComboBox>
                 {/* <Text >El dia de hoy realize las siguientes actividades:</Text> */}
                 <form className="form-ticket-actividades">
                     <div className="form-ticket-actividades-child-1">
                         <Title level="H5">Actividad</Title>
-                        <TextArea ref={inputText} rows={7} className='form-ticket-actividades-textArea' />
+                        <TextArea name="actividadDetalle" onInput={handleInputChange} rows={7} className='form-ticket-actividades-textArea' />
                     </div>
                     <div className="form-ticket-actividades-child-2">
                         <Title level="H5">Horas</Title>
                         <StepInput
-                            ref={inputCantHours}
                             className="form-ticket-actividades-step-input"
+                            name="horas"
+                            onChange={handleInputChange}
                             style={{ width: 4 }}
                             min={0}
                             max={8} />

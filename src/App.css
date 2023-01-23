@@ -10,6 +10,17 @@
     width: 32vw;
 }
 
+.custom-list-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.custom-list-items-text{
+    width: 50vw;
+}
+
 .dialog-content-title{
     font-size: 18px;
     margin: 8px 0;
