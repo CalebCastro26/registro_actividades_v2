@@ -1,12 +1,12 @@
-import { Bar, Button, Dialog, Title, TextArea, StepInput, ComboBox, ComboBoxItem, Label, BusyIndicator, } from "@ui5/webcomponents-react";
-import { getDate } from "../utilities/utilities";
-import { useContext, useEffect, useState } from "react";
+import { Bar, Button, Dialog, Title, TextArea, StepInput, ComboBox, ComboBoxItem, Label, BusyIndicator} from "@ui5/webcomponents-react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { ApplicationContext } from "../context/ApplicationContext";
-import "@ui5/webcomponents/dist/features/InputElementsFormSupport.js";
+import "@ui5/webcomponents-icons/dist/save"
+import "@ui5/webcomponents/dist/features/InputElementsFormSupport.js"
 import '../App.css'
+import { convertFecha } from "../utilities/utilities";
 
-export default function DialogRegistrar({ estado }) {
-
+export default function DialogRegistrar({ estado, actividad, setRegistrado, registrado }) {
     const [dataTicket, setDataTicket] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [body, setBody] = useState({})
@@ -31,7 +31,6 @@ export default function DialogRegistrar({ estado }) {
         )
             .then((response) => response.json())
             .then((result) => {
-                // console.log(result);
                 setDataTicket(result)
                 setIsLoading(false)
 
@@ -52,10 +51,9 @@ export default function DialogRegistrar({ estado }) {
         }
         )
             .then((response) => response.json())
-            .then((result) => {
-                console.log(result);
+            .then(() => {
                 setIsLoading(false)
-
+                setRegistrado(!registrado)
             })
             .catch((error) => console.log("error", error));
     }
@@ -89,14 +87,14 @@ export default function DialogRegistrar({ estado }) {
             className="dialog-form"
             footer={<Bar design="Footer" endContent={
                 <>
-                    <Button design='Positive' onClick={registrarActividad}>Guardar</Button>
-                    <Button onClick={closeDialogRegistrar} design="Negative">Cancelar/Cerrar</Button>
+                    <Button style={{width: '60px'}} icon="save" design='Positive' onClick={registrarActividad}/>
+                    <Button style={{width: '60px'}} icon="decline" onClick={closeDialogRegistrar} design="Negative"/>
                 </>
             } />}
             open={estado}>
 
             {isLoading ? (<div style={{ display: 'flex', justifyContent: 'center' }}><BusyIndicator active /></div>) : (<div className="dialog-content">
-                <Title className="dialog-content-title">Fecha: {getDate()}</Title>
+                <Title className="dialog-content-title">{actividad.fechaRegistro}</Title>
                 <Label>Ticket:</Label>
                 <ComboBox className="dialog-content-combobox" onChange={handleChange} >
                     {dataTicket.map(ticket => (
@@ -118,7 +116,6 @@ export default function DialogRegistrar({ estado }) {
                             className="form-ticket-actividades-step-input"
                             name="horas"
                             onChange={handleInputChange}
-                            style={{ width: 4 }}
                             min={0}
                             max={8} />
                     </div>

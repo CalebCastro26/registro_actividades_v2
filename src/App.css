@@ -1,5 +1,5 @@
 .index-content{
-    height: 80vw;
+    height: 90vw;
 }
 
 .index-content-title{
@@ -8,6 +8,10 @@
 
 .dialog-form {
     width: 32vw;
+}
+
+.busy-indicator{
+    margin-left: 45vw;
 }
 
 .custom-list-items{
@@ -33,7 +37,7 @@
 
 .form-ticket-actividades {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column-reverse;
     margin-top: 10px;
 }
 
@@ -51,12 +55,13 @@
 }
 
 .form-ticket-actividades-textArea {
-    width: 20vw;
+    width: 30vw;
 }
 
 .form-ticket-actividades-step-input {
-    margin-top: 50%;
-}
+        margin: 15px 0;
+        width: 150px !important; 
+    }
 
 @media screen and (max-width: 1110px) {
     .index-content{
@@ -72,7 +77,7 @@
     }
 
     .form-ticket-actividades-textArea {
-        width: 25vw;
+        width: 45vw;
     }
 
     .form-ticket-actividades {
@@ -104,7 +109,7 @@
 
     .form-ticket-actividades-textArea {
         margin-top: 5%;
-        width: 265px;
+        width: 280px;
     }
 
     .form-ticket-actividades-step-input {

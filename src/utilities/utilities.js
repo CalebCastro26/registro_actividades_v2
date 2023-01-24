@@ -28,39 +28,3 @@ export function getDate() {
     let ahno = fecha.getFullYear();
     return `${day}/${mes + 1}/${ahno}`;
 }
-
-export function funcAgrupamientoActividades(listadoActividades) {
-    let nuevoObjeto = {}
-    let nuevoArr = []
-
-    listadoActividades.forEach(actividad => {
-        if (!nuevoObjeto.hasOwnProperty(actividad.fecha)) {
-            nuevoObjeto[actividad.fecha] = {
-                fecha: convertFecha(actividad.fecha),
-                actividad: []
-            }
-        }
-
-        nuevoObjeto[actividad.fecha].actividad.push({
-            id: actividad.id,
-            actividadDetalle: actividad.actividadDetalle,
-            cliente: actividad.cliente.clienteNombre,
-            horas: actividad.horas
-        })
-
-    })
-
-    for (let clave in nuevoObjeto) {
-        nuevoArr.push(nuevoObjeto[clave])
-    }
-
-    //console.log(nuevoArr)
-    return nuevoArr
-}
-
-
-
-
-
-
-

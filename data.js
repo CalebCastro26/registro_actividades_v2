@@ -1,212 +1,217 @@
 export const data = [
     {
-        "modifiedDate": "12/01/2023 18:53:15",
-        "createdDate": "12/01/2023 18:53:15",
-        "createdBy": "localhost/Anonymous",
-        "modifiedBy": "localhost/Anonymous",
-        "id": 4,
-        "actividadDetalle": "Creación de la estructura del proyecto",
-        "fecha": "12.01.2023 23:43:02",
-        "horas": 8,
-        "aprobacionCliente": "",
-        "aprobacionPlanificacion": "",
-        "cliente": {
-            "modifiedDate": "10/01/2023 16:59:27",
-            "createdDate": "10/01/2023 16:59:27",
-            "createdBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "modifiedBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "id": 1,
-            "clienteCodigoErp": "S000002",
-            "clienteNombre": "Anthony Ramos Romero",
-            "clientePrefijo": "Sr"
-        },
-        "coordinador": {
-            "modifiedDate": "10/01/2023 16:59:53",
-            "createdDate": "10/01/2023 16:59:53",
-            "createdBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "modifiedBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "id": 1,
-            "coordinadorNombre": "Coordinador Anthony Ramos",
-            "coordinadorEmail": "coordinadoranthony@gmail.com",
-            "coordinadorTelefono": "51992236869",
-            "coordinadorErp": "CORDI000001"
-        },
-        "requerimientoConsultor": {
-            "modifiedDate": "12/01/2023 14:27:28",
-            "createdDate": "12/01/2023 14:27:28",
-            "createdBy": "user/sap.custom/integracion_csti@yopmail.com",
-            "modifiedBy": "user/sap.custom/integracion_csti@yopmail.com",
-            "id": 2,
-            "requerimientoId": 4,
-            "consultorId": 1
-        }
+        "fechaRegistro": "13.01.2023",
+        "clienteGroups": [
+            {
+                "id": 1,
+                "clienteCodigoErp": "S000003",
+                "clienteNombre": "Anthony Ramos Romero",
+                "requerimientoGroups": [
+                    {
+                        "requerimientoId": 8,
+                        "requerimientoCode": "AUN-2023-001",
+                        "requerimientoDescription": null,
+                        "requerimientoTotalHorasPlan": 100,
+                        "requerimientoTotalHorasReportadas": 37,
+                        "actividadGroups": [
+                            {
+                                "id": 6,
+                                "actividadDetalle": "Creación de instancias BTP para el proyecto IPOC",
+                                "horas": 8.5,
+                                "fecha": "13.01.2023 16:19:15"
+                            },
+                            {
+                                "id": 5,
+                                "actividadDetalle": "Analisis del proyecto IPOC",
+                                "horas": 8.5,
+                                "fecha": "13.01.2023 16:19:15"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     },
     {
-        "modifiedDate": "12/01/2023 18:53:15",
-        "createdDate": "12/01/2023 18:53:15",
-        "createdBy": "localhost/Anonymous",
-        "modifiedBy": "localhost/Anonymous",
-        "id": 5,
-        "actividadDetalle": "edicion de la estructura del proyecto",
-        "fecha": "12.01.2023 23:43:02",
-        "horas": 8,
-        "aprobacionCliente": "",
-        "aprobacionPlanificacion": "",
-        "cliente": {
-            "modifiedDate": "10/01/2023 16:59:27",
-            "createdDate": "10/01/2023 16:59:27",
-            "createdBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "modifiedBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "id": 1,
-            "clienteCodigoErp": "S000002",
-            "clienteNombre": "Anthony Ramos Romero",
-            "clientePrefijo": "Sr"
-        },
-        "coordinador": {
-            "modifiedDate": "10/01/2023 16:59:53",
-            "createdDate": "10/01/2023 16:59:53",
-            "createdBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "modifiedBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "id": 1,
-            "coordinadorNombre": "Coordinador Anthony Ramos",
-            "coordinadorEmail": "coordinadoranthony@gmail.com",
-            "coordinadorTelefono": "51992236869",
-            "coordinadorErp": "CORDI000001"
-        },
-        "requerimientoConsultor": {
-            "modifiedDate": "12/01/2023 14:27:28",
-            "createdDate": "12/01/2023 14:27:28",
-            "createdBy": "user/sap.custom/integracion_csti@yopmail.com",
-            "modifiedBy": "user/sap.custom/integracion_csti@yopmail.com",
-            "id": 2,
-            "requerimientoId": 4,
-            "consultorId": 1
-        }
+        "fechaRegistro": "23.01.2023",
+        "clienteGroups": [
+            {
+                "id": 1,
+                "clienteCodigoErp": "S000003",
+                "clienteNombre": "Anthony Ramos Romero",
+                "requerimientoGroups": [
+                    {
+                        "requerimientoId": 8,
+                        "requerimientoCode": "AUN-2023-001",
+                        "requerimientoDescription": null,
+                        "requerimientoTotalHorasPlan": 100,
+                        "requerimientoTotalHorasReportadas": 37,
+                        "actividadGroups": [
+                            {
+                                "id": 19,
+                                "actividadDetalle": "Registrando actividad en el ticket 1 de Anthony",
+                                "horas": 4,
+                                "fecha": "23.01.2023 21:45:41"
+                            },
+                            {
+                                "id": 13,
+                                "actividadDetalle": "Prueba de registro de actividades",
+                                "horas": 4,
+                                "fecha": "23.01.2023 21:43:17"
+                            },
+                            {
+                                "id": 12,
+                                "actividadDetalle": "registro 2 actividad v1",
+                                "horas": 4,
+                                "fecha": "23.01.2023 17:50:22"
+                            },
+                            {
+                                "id": 11,
+                                "actividadDetalle": "Registro actividad v1",
+                                "horas": 3,
+                                "fecha": "23.01.2023 17:49:55"
+                            }
+                        ]
+                    },
+                    {
+                        "requerimientoId": 9,
+                        "requerimientoCode": "AUN-2023-002",
+                        "requerimientoDescription": null,
+                        "requerimientoTotalHorasPlan": 50,
+                        "requerimientoTotalHorasReportadas": 8,
+                        "actividadGroups": [
+                            {
+                                "id": 18,
+                                "actividadDetalle": "Registrando actividad en el ticket 2 de Anthony",
+                                "horas": 4,
+                                "fecha": "23.01.2023 21:45:30"
+                            },
+                            {
+                                "id": 8,
+                                "actividadDetalle": "Primera actividad",
+                                "horas": 4,
+                                "fecha": "23.01.2023 17:11:51"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "clienteCodigoErp": "S000002",
+                "clienteNombre": "Pacasmayo",
+                "requerimientoGroups": [
+                    {
+                        "requerimientoId": 13,
+                        "requerimientoCode": "PAC-2023-001",
+                        "requerimientoDescription": null,
+                        "requerimientoTotalHorasPlan": 76,
+                        "requerimientoTotalHorasReportadas": 16,
+                        "actividadGroups": [
+                            {
+                                "id": 20,
+                                "actividadDetalle": "Registro para pacasmayo",
+                                "horas": 4,
+                                "fecha": "23.01.2023 21:49:45"
+                            },
+                            {
+                                "id": 14,
+                                "actividadDetalle": "Prueba de registro de actividades para pascasmayo",
+                                "horas": 4,
+                                "fecha": "23.01.2023 21:43:36"
+                            },
+                            {
+                                "id": 10,
+                                "actividadDetalle": "asdasd",
+                                "horas": 4,
+                                "fecha": "23.01.2023 17:48:21"
+                            },
+                            {
+                                "id": 9,
+                                "actividadDetalle": "Actividad registrada para pacasmayo",
+                                "horas": 4,
+                                "fecha": "23.01.2023 17:16:10"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "clienteCodigoErp": "S000001",
+                "clienteNombre": "Buenaventura",
+                "requerimientoGroups": [
+                    {
+                        "requerimientoId": 12,
+                        "requerimientoCode": "BVN-2023-001",
+                        "requerimientoDescription": null,
+                        "requerimientoTotalHorasPlan": 175,
+                        "requerimientoTotalHorasReportadas": 12,
+                        "actividadGroups": [
+                            {
+                                "id": 21,
+                                "actividadDetalle": "Registro buenaventura",
+                                "horas": 4,
+                                "fecha": "23.01.2023 22:22:07"
+                            },
+                            {
+                                "id": 16,
+                                "actividadDetalle": "Registrando actividad en el ticket 1 de buenaventura",
+                                "horas": 4,
+                                "fecha": "23.01.2023 21:44:30"
+                            },
+                            {
+                                "id": 15,
+                                "actividadDetalle": "Registrando una actividad para buenaventura",
+                                "horas": 4,
+                                "fecha": "23.01.2023 21:43:54"
+                            }
+                        ]
+                    },
+                    {
+                        "requerimientoId": 14,
+                        "requerimientoCode": "BVN-2023-002",
+                        "requerimientoDescription": null,
+                        "requerimientoTotalHorasPlan": 350,
+                        "requerimientoTotalHorasReportadas": 4,
+                        "actividadGroups": [
+                            {
+                                "id": 17,
+                                "actividadDetalle": "Registrando actividad en el ticket 2 de buenaventura",
+                                "horas": 4,
+                                "fecha": "23.01.2023 21:44:54"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     },
     {
-        "modifiedDate": "12/01/2023 18:53:15",
-        "createdDate": "12/01/2023 18:53:15",
-        "createdBy": "localhost/Anonymous",
-        "modifiedBy": "localhost/Anonymous",
-        "id": 6,
-        "actividadDetalle": "Actualizacion de la estructura del proyecto",
-        "fecha": "12.01.2023 23:43:02",
-        "horas": 8,
-        "aprobacionCliente": "",
-        "aprobacionPlanificacion": "",
-        "cliente": {
-            "modifiedDate": "10/01/2023 16:59:27",
-            "createdDate": "10/01/2023 16:59:27",
-            "createdBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "modifiedBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "id": 1,
-            "clienteCodigoErp": "S000002",
-            "clienteNombre": "Buenaventura",
-            "clientePrefijo": "Sr"
-        },
-        "coordinador": {
-            "modifiedDate": "10/01/2023 16:59:53",
-            "createdDate": "10/01/2023 16:59:53",
-            "createdBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "modifiedBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "id": 1,
-            "coordinadorNombre": "Coordinador Anthony Ramos",
-            "coordinadorEmail": "coordinadoranthony@gmail.com",
-            "coordinadorTelefono": "51992236869",
-            "coordinadorErp": "CORDI000001"
-        },
-        "requerimientoConsultor": {
-            "modifiedDate": "12/01/2023 14:27:28",
-            "createdDate": "12/01/2023 14:27:28",
-            "createdBy": "user/sap.custom/integracion_csti@yopmail.com",
-            "modifiedBy": "user/sap.custom/integracion_csti@yopmail.com",
-            "id": 2,
-            "requerimientoId": 4,
-            "consultorId": 1
-        }
-    },
-    {
-        "modifiedDate": "12/01/2023 18:53:15",
-        "createdDate": "12/01/2023 18:53:15",
-        "createdBy": "localhost/Anonymous",
-        "modifiedBy": "localhost/Anonymous",
-        "id": 7,
-        "actividadDetalle": "Delete de la estructura del proyecto",
-        "fecha": "12.01.2023 23:43:02",
-        "horas": 8,
-        "aprobacionCliente": "",
-        "aprobacionPlanificacion": "",
-        "cliente": {
-            "modifiedDate": "10/01/2023 16:59:27",
-            "createdDate": "10/01/2023 16:59:27",
-            "createdBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "modifiedBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "id": 1,
-            "clienteCodigoErp": "S000002",
-            "clienteNombre": "Buenaventura",
-            "clientePrefijo": "Sr"
-        },
-        "coordinador": {
-            "modifiedDate": "10/01/2023 16:59:53",
-            "createdDate": "10/01/2023 16:59:53",
-            "createdBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "modifiedBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "id": 1,
-            "coordinadorNombre": "Coordinador Anthony Ramos",
-            "coordinadorEmail": "coordinadoranthony@gmail.com",
-            "coordinadorTelefono": "51992236869",
-            "coordinadorErp": "CORDI000001"
-        },
-        "requerimientoConsultor": {
-            "modifiedDate": "12/01/2023 14:27:28",
-            "createdDate": "12/01/2023 14:27:28",
-            "createdBy": "user/sap.custom/integracion_csti@yopmail.com",
-            "modifiedBy": "user/sap.custom/integracion_csti@yopmail.com",
-            "id": 2,
-            "requerimientoId": 4,
-            "consultorId": 1
-        }
-    },
-    {
-        "modifiedDate": "13/01/2023 16:21:19",
-        "createdDate": "13/01/2023 16:21:19",
-        "createdBy": "user/sap.custom/anthonyramosdev@gmail.com",
-        "modifiedBy": "user/sap.custom/anthonyramosdev@gmail.com",
-        "id": 8,
-        "actividadDetalle": "Analisis del proyecto IPOC",
-        "fecha": "13.01.2023 16:19:15",
-        "horas": 8.5,
-        "aprobacionCliente": "",
-        "aprobacionPlanificacion": "",
-        "cliente": {
-            "modifiedDate": "10/01/2023 16:59:27",
-            "createdDate": "10/01/2023 16:59:27",
-            "createdBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "modifiedBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "id": 1,
-            "clienteCodigoErp": "S000002",
-            "clienteNombre": "Anthony Ramos Romero",
-            "clientePrefijo": "Sr"
-        },
-        "coordinador": {
-            "modifiedDate": "11/01/2023 15:43:25",
-            "createdDate": "11/01/2023 15:43:25",
-            "createdBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "modifiedBy": "user/sap.default/anthonyramosdev@gmail.com",
-            "id": 3,
-            "coordinadorNombre": "JUAN MEDINA",
-            "coordinadorEmail": "mmedina@csticorp.biz",
-            "coordinadorTelefono": "",
-            "coordinadorErp": "0019"
-        },
-        "requerimientoConsultor": {
-            "modifiedDate": "12/01/2023 14:27:28",
-            "createdDate": "12/01/2023 14:27:28",
-            "createdBy": "user/sap.custom/integracion_csti@yopmail.com",
-            "modifiedBy": "user/sap.custom/integracion_csti@yopmail.com",
-            "id": 2,
-            "requerimientoId": 4,
-            "consultorId": 1
-        }
+        "fechaRegistro": "16.01.2023",
+        "clienteGroups": [
+            {
+                "id": 1,
+                "clienteCodigoErp": "S000003",
+                "clienteNombre": "Anthony Ramos Romero",
+                "requerimientoGroups": [
+                    {
+                        "requerimientoId": 8,
+                        "requerimientoCode": "AUN-2023-001",
+                        "requerimientoDescription": null,
+                        "requerimientoTotalHorasPlan": 100,
+                        "requerimientoTotalHorasReportadas": 37,
+                        "actividadGroups": [
+                            {
+                                "id": 7,
+                                "actividadDetalle": "Prueba 01",
+                                "horas": 5,
+                                "fecha": "16.01.2023 16:19:15"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ]
