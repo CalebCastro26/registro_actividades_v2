@@ -1,12 +1,12 @@
 import { Bar, Button, Dialog, Title, TextArea, StepInput, ComboBox, ComboBoxItem, Label, BusyIndicator} from "@ui5/webcomponents-react";
-import { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ApplicationContext } from "../context/ApplicationContext";
 import "@ui5/webcomponents-icons/dist/save"
 import "@ui5/webcomponents/dist/features/InputElementsFormSupport.js"
 import '../App.css'
 import { convertFecha } from "../utilities/utilities";
 
-export default function DialogRegistrar({ estado, actividad, setRegistrado, registrado }) {
+export default function DialogRegistrar({ estado, actividad, setRegistrado, registrado, actividadRegistrada }) {
     const [dataTicket, setDataTicket] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [body, setBody] = useState({})
@@ -33,7 +33,7 @@ export default function DialogRegistrar({ estado, actividad, setRegistrado, regi
             .then((result) => {
                 setDataTicket(result)
                 setIsLoading(false)
-
+                
             })
             .catch((error) => console.log("error", error));
     }, [])
@@ -54,6 +54,7 @@ export default function DialogRegistrar({ estado, actividad, setRegistrado, regi
             .then(() => {
                 setIsLoading(false)
                 setRegistrado(!registrado)
+                actividadRegistrada()
             })
             .catch((error) => console.log("error", error));
     }
@@ -94,7 +95,7 @@ export default function DialogRegistrar({ estado, actividad, setRegistrado, regi
             open={estado}>
 
             {isLoading ? (<div style={{ display: 'flex', justifyContent: 'center' }}><BusyIndicator active /></div>) : (<div className="dialog-content">
-                <Title className="dialog-content-title">{actividad.fechaRegistro}</Title>
+                <Title className="dialog-content-title">{actividad.fechaRegistro != null ? convertFecha(actividad.fechaRegistro) : actividad.fechaRegistro}</Title>
                 <Label>Ticket:</Label>
                 <ComboBox className="dialog-content-combobox" onChange={handleChange} >
                     {dataTicket.map(ticket => (

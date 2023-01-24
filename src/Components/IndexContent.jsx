@@ -35,7 +35,7 @@ export default function IndexContent() {
     //         .catch((error) => console.log("error", error));
     // }, [registrado])
 
-    console.log(listadoActividades)
+    //console.log(listadoActividades)
 
     function openDialogRegistrar(actividad) {
         setActividad(actividad)
@@ -44,12 +44,15 @@ export default function IndexContent() {
         })
     }
 
+    function actividadRegistrada(){
+        toastRegistrar.current.show()
+    }
+
     return (
         <div className="index-content">
             <Page
                 header={<Bar startContent={<Title className='index-content-title'>Mis actividades</Title>}
                     endContent={<Title className='index-content-title'>Fecha: {getDate()}</Title>} />}>
-                <Button onClick={() => toastRegistrar.current.show()}></Button>
                 <br />
                 {isLoading ? (<div className="busy-indicator"><BusyIndicator active /></div>) : (listadoActividades.reverse().map(actividad => (
                     <Panel
@@ -60,14 +63,15 @@ export default function IndexContent() {
                                 <Button style={{ margin: 5 }} design='Positive' icon="add" onClick={() => openDialogRegistrar(actividad)}></Button>
                             </>}
                         key={actividad.fechaRegistro}
-                        collapsed={true}
-                    >
+                        collapsed={true}>
                         <Tree>
                             {actividad.clienteGroups.map(cliente => (
                                 <TreeItem
+                                    key={cliente.id}
                                     text={cliente.clienteNombre}>
                                     {cliente.requerimientoGroups.map(requerimiento => (
                                         <TreeItem
+                                            key={requerimiento.requerimientoId}
                                             text={requerimiento.requerimientoCode}>
                                             {requerimiento.actividadGroups.map(act => (
                                                 <TreeItemCustom
@@ -75,7 +79,7 @@ export default function IndexContent() {
                                                     content={
                                                         <div className="custom-list-items">
                                                             <div className="custom-list-items-text">
-                                                                <Label wrapping={true}>{act.actividadDetalle}</Label>
+                                                                <Label wrappingType='Normal'>{act.actividadDetalle}</Label>
                                                             </div>
                                                             <Text>{act.horas}</Text>
                                                             <Button icon="edit"></Button>
@@ -91,7 +95,12 @@ export default function IndexContent() {
                     </Panel>
                 )))}
             </Page>
-            <DialogRegistrar estado={appctx.data.dialogRegistrar} actividad={actividad} registrado={registrado} setRegistrado={setRegistrado} />
+            <DialogRegistrar 
+                estado={appctx.data.dialogRegistrar} 
+                actividad={actividad} 
+                registrado={registrado} 
+                setRegistrado={setRegistrado} 
+                actividadRegistrada={actividadRegistrada}/>
             <Toast ref={toastRegistrar}>Registrado Correctamente</Toast>
         </div>
     )
